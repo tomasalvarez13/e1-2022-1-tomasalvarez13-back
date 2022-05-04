@@ -3,6 +3,9 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  skip_before_action :verify_authenticity_token
+  respond_to :json
+
 
   # GET /resource/sign_up
   # def new
@@ -10,9 +13,27 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @message = ''
+    user = User.find_by_email(params['email'].downcase)
+    if user
+      @message = 'Ya hay un usuario registrado con este mail'
+    elsif params['password'] && params['password_confirmation']
+      if params['password'] == params['password_confirmation']
+        user = User.new
+        user.email = params['email']
+        user.password = params['password']
+        user.save
+        @message = 'Registrado exitosamente'
+      else
+        @message = 'Password and confirmation must be the same'
+      end
+    else
+      @message = 'faltan parametros'
+    end
+    
+    render 'sign_up', status: :ok, formats: [:json]
+  end
 
   # GET /resource/edit
   # def edit
