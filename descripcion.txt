@@ -1,0 +1,106 @@
+POST  /users/sign_in
+    - body: Json con siguiente formato:
+        {
+            "email": ,
+            "password":
+        }
+    - devuelve: Json con siguiente formato:
+        {
+            "message": 
+        }
+        Donde message puede tener los siguientes valores:
+            -'Succesfully signed in!!'
+            -'Usuario o contraseña incorrecto'
+            -'No has verificado tu cuenta'
+            -'Usuario no registrado'
+            -'You are already signed in'
+
+POST  /users/sign_up
+    - body: Json con siguiente formato:
+        {
+            "email": ,
+            "password": ,
+            "password_confirmation": 
+        }
+    - devuelve: Json con siguiente formato:
+        {
+            "message": 
+        }
+        Donde message puede tener los siguientes valores:
+            -'Ya hay un usuario registrado con este mail'
+            -'Registrado exitosamente'
+            -'Password and confirmation must be the same'
+            -'faltan parametros'
+
+DELETE  /users/sign_out
+    - body: sin body
+    - devuelve: Json con siguiente formato:
+        {
+            "message": 
+        }
+        Donde message puede tener los siguientes valores:
+            -'Signed Out'
+            -'cannot sign out'
+            -'No current user'
+
+GET  /location
+    - body: sin body
+    - devuelve: Json con siguiente formato:
+        {
+            "locations": [
+                {
+                    "lat": "4205.0",
+                    "long": "420.0",
+                    "id": 4
+                }
+            ],
+            "u_id": 14
+        }
+
+POST  /location
+    - parametros por url:
+        - u_id
+        - lat   
+        - long
+        - name
+    - devuelve: Json con siguiente formato:
+        {
+            "message": 
+        }
+        Donde message puede tener los siguientes valores:
+            -'Ubicación creeada exitosamente!'
+            -'Hubo un error. Intenta nuevamente.'
+            -'Faltan parametros'
+            -'Debes Iniciar sesión'
+
+DELETE  /location
+    - parametros por url:
+        - id
+    - devuelve: Json con siguiente formato:
+        {
+            "message": 
+        }
+        Donde message puede tener los siguientes valores:
+            -'Ubicación eliminada exitosamente!'
+            -"No hay ubicacion con ese id"
+            -'No hay id'
+            -'Debes Iniciar sesión'
+
+GET  /location
+    - body: params por url:
+        -email
+    - devuelve: Json con siguiente formato:
+        {
+            "locations": [
+                {
+                    "lat": "4205.0",
+                    "long": "420.0"
+                }
+            ],
+            "other_locations": [
+                {
+                    "lat": "4205.0",
+                    "long": "420.0"
+                }
+            ]
+        }
