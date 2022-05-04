@@ -92,14 +92,21 @@ class LocationsController < ApplicationController
 
     def destroy
         @message = ''
-        if params[:id]
-            @location = Location.find(params[:id])
-            @location.destroy
-            @message = 'Ubicacion eliminada exitosamente'
+        if current_user
+            if params[:id]
+                @location = Location.find(params[:id])
+                if @location
+                    @location.destroy
+                    @message = 'Ubicacion eliminada exitosamente'
+                else
+                    @message = "No hay ubicacion con ese id"
+                end
+            else    
+                @message = 'No hay id'
+            end
         else    
-            @message = 'No hay id'
+            @message = 'Debes Iniciar sesión'
         end
         render 'delete_location', status: :ok, formats: [:json]
-        
       end
 end

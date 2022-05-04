@@ -12,9 +12,17 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   # end
 
   # GET /resource/confirmation?confirmation_token=abcdef
-  # def show
-  #   super
-  # end
+  def show
+    @user = User.where(confirmation_token: params['confirmation_token']).first
+    if @user
+      @user.confirmed_at = Time.now.to_date
+      @user.save
+      @message = 'Cuenta verificada exitosamente'
+    else
+      @message = 'error'
+    end
+    render 'confirmation', status: :ok, formats: [:json]
+  end
 
   # protected
 
