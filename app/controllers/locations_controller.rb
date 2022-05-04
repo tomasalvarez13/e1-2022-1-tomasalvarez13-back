@@ -5,6 +5,9 @@ class LocationsController < ApplicationController
         @user_id = 0
         if current_user
             @user_id = current_user.id
+        else
+            render 'no_user', status: :ok, formats: [:json]
+            return
         end
         @locations = Location.all.where(user_id: @user_id )
         @location_list = Array.new
@@ -19,6 +22,9 @@ class LocationsController < ApplicationController
         @user_id = 0
         if current_user
             @user_id = current_user.id
+        else
+            render 'no_user', status: :ok, formats: [:json]
+            return
         end
         @locations = Location.all.where(user_id: @user_id )
         @location_list = Array.new

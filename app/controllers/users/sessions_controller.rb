@@ -23,20 +23,28 @@ class Users::SessionsController < Devise::SessionsController
 
   def create_new
     if current_user
-      print("HAY CURRENT USER\n")
       @message = 'You are already signed in'
       render 'sign_in', status: :ok, formats: [:json]
-    else
-      print("No hay current user\n")
+      return 
     end
     user = User.find_by_email(params['email'].downcase)
-    if user.valid_password?(params['password']) then
-      current_user = user
-      sign_in(user)
-      @message = 'Succesfully signed in!!'
-      render 'sign_in', status: :ok, formats: [:json]
+    if user
+      if user.confirmed_at
+        if user.valid_password?(params['password'])
+          current_user = user
+          sign_in(user)
+          @message = 'Succesfully signed in!!'
+          render 'sign_in', status: :ok, formats: [:json]
+        else
+          @message = 'Usuario o contraseña incorrecto'
+          render 'sign_in', status: :ok, formats: [:json]
+        end
+      else
+        @message = 'No has verificado tu cuenta'
+        render 'sign_in', status: :ok, formats: [:json]
+      end
     else
-      @message = 'Usuario o contraseña incorrecto'
+      @message = 'Usuario no registrado'
       render 'sign_in', status: :ok, formats: [:json]
     end
   end
@@ -44,12 +52,17 @@ class Users::SessionsController < Devise::SessionsController
 
   # DELETE /resource/sign_out
   def destroy
-    signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
-    @message = ''
-    if signed_out
-      @message = 'Signed Out'
+    print("LAMANDOOO\n\n")
+    if current_user
+      signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
+      @message = ''
+      if signed_out
+        @message = 'Signed Out'
+      else
+        @message = 'cannot sign out'
+      end
     else
-      @message = 'cannot sign out'
+      @message = 'No current user'
     end
     render 'sign_in', status: :ok, formats: [:json] 
   end
@@ -83,10 +96,13 @@ class Users::SessionsController < Devise::SessionsController
   # to the after_sign_out path.
   def verify_signed_out_user
     if all_signed_out?
-      set_flash_message! :notice, :already_signed_out
-
-      respond_to_on_destroy
+      @message = 'Already signed out'
+      render 'sign_in', status: :ok, formats: [:json] 
     end
+  end
+
+  def require_no_authentication
+    print("hi baby\n\n")
   end
 
   def all_signed_out?
