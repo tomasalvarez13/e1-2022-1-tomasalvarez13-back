@@ -20,7 +20,8 @@ POST  /users/sign_up
         {
             "email": ,
             "password": ,
-            "password_confirmation": 
+            "password_confirmation":,
+            "nickname":
         }
     - devuelve: Json con siguiente formato:
         {
@@ -102,15 +103,19 @@ GET  /location
                     "lat": "4205.0",
                     "long": "420.0"
                 }
-            ]
+            ],
+            "nickname":
         }
 
 GET /all_users
     -body: no paramas
     -devuelve Json con el siguiente formato:
         {"users":[
-            {"email":},
-            {"email":},
-            {"email":}
+            {"email": , 
+            "nickname": },
+            {"email":,
+            "nickname": },
+            {"email":, 
+            "nickname": }
             ]
         }
