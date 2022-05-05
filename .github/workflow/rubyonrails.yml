@@ -21,6 +21,4 @@ jobs:
         with:
           bundler-cache: true
       - name: Lint Ruby files
-        uses: andrewmcodes/rubocop-linter-action@v3.3.0
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec rubocop
