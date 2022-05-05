@@ -1,6 +1,8 @@
 IIC2173 - E1 - Servicios de interés conjunto
 Objetivo
 
+test
+
 La entrega está intencionada para que creen un diseño sólido de una aplicación de pareo de personas en base a intereses comunes. Deberán construir una aplicación en base a lo que hicieron en la E0 y añadirle ciertas funciones específicas.
 Enunciado
 
