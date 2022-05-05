@@ -104,3 +104,13 @@ GET  /location
                 }
             ]
         }
+
+GET /all_users
+    -body: no paramas
+    -devuelve Json con el siguiente formato:
+        {"users":[
+            {"email":},
+            {"email":},
+            {"email":}
+            ]
+        }
