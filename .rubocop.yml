@@ -8,6 +8,7 @@ AllCops:
     - 'db/**/*'
     - 'script/**/*'
     - 'bin/**/*'
+    - 'vendor/'
     - tmp/**
     - test/**
     - storage/**/*
