@@ -18,11 +18,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user = User.find_by_email(params['email'].downcase)
     if user
       @message = 'Ya hay un usuario registrado con este mail'
-    elsif params['password'] && params['password_confirmation']
+    elsif params['password'] && params['password_confirmation'] && params['nickname']
       if params['password'] == params['password_confirmation']
         user = User.new
         user.email = params['email']
         user.password = params['password']
+        user.nickname = params['nickname']
         user.save
         @message = 'Registrado exitosamente'
       else

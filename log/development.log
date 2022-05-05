@@ -641,3 +641,267 @@ Processing by Users::SessionsController#create as */*
 Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2022-05-05 13:26:57 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tomas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.7/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.7) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.7) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (10.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2032918012893123195)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddNicknameToUser (20220505172532)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (89.7ms)[0m  [1m[35mALTER TABLE "users" ADD "nickname" character varying DEFAULT NULL[0m
+  ↳ db/migrate/20220505172532_add_nickname_to_user.rb:3
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2032918012893123195)[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2022-05-05 13:28:06 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tomas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.7/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.7) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.7) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-05-05 13:28:08 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tomas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.7/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.7) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.7) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.7) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.7) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-05-05 13:28:31 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tomas/.rvm/gems/ruby-2.6.5/gems/activerecord-5.2.7/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/home.json.jbuilder
+  Rendered home/home.json.jbuilder (1.1ms)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/all_users" for 127.0.0.1 at 2022-05-05 13:31:17 -0400
+Processing by LocationsController#all_users as HTML
+  Rendering locations/all_users.json.jbuilder
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmed_at" IS NOT NULL[0m
+  ↳ app/views/locations/all_users.json.jbuilder:1
+  Rendered locations/all_users.json.jbuilder (156.2ms)
+Completed 200 OK in 166ms (Views: 156.5ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-05 13:34:01 -0400
+Processing by Users::SessionsController#create as */*
+  Parameters: {"email"=>"tom@fopy.cl", "password"=>"[FILTERED]", "session"=>{"email"=>"tom@fopy.cl", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@fopy.cl"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:30
+  Rendering users/sessions/sign_in.json.jbuilder
+  Rendered users/sessions/sign_in.json.jbuilder (0.5ms)
+Completed 200 OK in 33ms (Views: 24.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-05 13:34:12 -0400
+Processing by Users::SessionsController#create as */*
+  Parameters: {"email"=>"tomasalvarez@uc.cl", "password"=>"[FILTERED]", "session"=>{"email"=>"tomasalvarez@uc.cl", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tomasalvarez@uc.cl"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:30
+  Rendering users/sessions/sign_in.json.jbuilder
+  Rendered users/sessions/sign_in.json.jbuilder (0.3ms)
+Completed 200 OK in 459ms (Views: 2.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/other_location?email=tomasalvarez13@gmail.com" for ::1 at 2022-05-05 13:34:23 -0400
+Processing by LocationsController#list_other as */*
+  Parameters: {"email"=>"tomasalvarez13@gmail.com"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:23
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/locations_controller.rb:31
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tomasalvarez13@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:41
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/locations_controller.rb:49
+  Rendering locations/list_other_locations.json.jbuilder
+  Rendered locations/list_other_locations.json.jbuilder (0.8ms)
+Completed 200 OK in 56ms (Views: 4.0ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-05-05 13:35:13 -0400
+Processing by Users::SessionsController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:109
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:57
+  Rendering users/sessions/sign_in.json.jbuilder
+  Rendered users/sessions/sign_in.json.jbuilder (0.4ms)
+Completed 200 OK in 101ms (Views: 4.4ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users" for ::1 at 2022-05-05 13:35:20 -0400
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tom@fopy.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"email"=>"tom@fopy.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@fopy.cl"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:18
+  Rendering users/registrations/sign_up.json.jbuilder
+  Rendered users/registrations/sign_up.json.jbuilder (0.6ms)
+Completed 200 OK in 83ms (Views: 81.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2022-05-05 13:35:32 -0400
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"tom@fopy.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "nickname"=>"lig", "registration"=>{"email"=>"tom@fopy.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "nickname"=>"lig"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@fopy.cl"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:27
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@fopy.cl"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:27
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "nickname", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "tom@fopy.cl"], ["encrypted_password", "$2a$12$/paqv79tRr2vwrQhOLexpOFd7LNEPGjQSicSfyMyuSr.zrxgmUu4i"], ["created_at", "2022-05-05 17:35:33.046029"], ["updated_at", "2022-05-05 17:35:33.046029"], ["nickname", "lig"], ["confirmation_token", "F4mDNUEEZzjcsSx-RXys"], ["confirmation_sent_at", "2022-05-05 17:35:33.046151"]]
+  ↳ app/controllers/users/registrations_controller.rb:27
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:27
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (12.9ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 284.2ms
+Sent mail to tom@fopy.cl (5368.6ms)
+Date: Thu, 05 May 2022 13:35:33 -0400
+From: tomasalvarez13.01@gmail.com
+Reply-To: tomasalvarez13.01@gmail.com
+To: tom@fopy.cl
+Message-ID: <62740ae5611ab_31162b13a16ac784134fc@tomas-ThinkPad-T450.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome tom@fopy.cl!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="https://59bqnuyp9h.execute-api.us-east-1.amazonaws.com/users/confirmation?confirmation_token=F4mDNUEEZzjcsSx-RXys">Confirm my account</a></p>
+
+  Rendering users/registrations/sign_up.json.jbuilder
+  Rendered users/registrations/sign_up.json.jbuilder (0.5ms)
+Completed 200 OK in 6018ms (Views: 4.7ms | ActiveRecord: 22.4ms)
+
+
