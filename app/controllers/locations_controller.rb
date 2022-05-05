@@ -35,9 +35,11 @@ class LocationsController < ApplicationController
         end
         @other_user_mail = ""
         @other_location_list = Array.new
+        @other_user_nickname = ""
         if params[:email]
             @other_user_mail = params[:email]
             @other_user = User.where(email: params[:email]).first
+            @other_user_nickname = @other_user.nickname
             if @other_user
                 
                 @other_user_id = @other_user.id
