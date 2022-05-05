@@ -108,5 +108,10 @@ class LocationsController < ApplicationController
             @message = 'Debes Iniciar sesión'
         end
         render 'delete_location', status: :ok, formats: [:json]
-      end
+    end
+
+    def all_users
+        @users = User.where.not(confirmed_at: nil)
+        render 'all_users', status: :ok, formats: [:json]
+    end
 end

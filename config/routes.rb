@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get 'new_location', to:'locations#new', as: 'new_location' #READY
   post 'locations', to: 'locations#create' #READY
   delete 'delete_location', to:'locations#destroy', as: 'delete_location'
+  get 'all_users', to: 'locations#all_users', as: 'all_users'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
